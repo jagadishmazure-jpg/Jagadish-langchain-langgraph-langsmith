@@ -35,7 +35,8 @@ def fetch_loan(loan_id: str) -> dict:
 @task
 def recommend(loan: dict) -> str:
     gap = loan["closing_in"] - loan["days_left"]
-    return f"{loan['loan_id']}: extend {7 if gap <= 7 else 14} days (lock ends in {loan['days_left']}, closing in {loan['closing_in']})"
+    days = -(-gap // 7) * 7  # whole weeks covering the gap
+    return f"{loan['loan_id']}: extend {days} days (lock ends in {loan['days_left']}, closing in {loan['closing_in']})"
 
 
 @entrypoint(checkpointer=InMemorySaver())

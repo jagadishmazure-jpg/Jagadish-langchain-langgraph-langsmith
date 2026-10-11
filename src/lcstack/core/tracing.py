@@ -13,8 +13,10 @@ import os
 from dataclasses import dataclass, field
 from typing import Any
 
+from langchain_core.messages import AIMessage, BaseMessage
 from langchain_core.tracers.base import BaseTracer
 from langchain_core.tracers.schemas import Run
+from langsmith import Client
 
 
 def langsmith_enabled() -> bool:
@@ -87,3 +89,80 @@ class LocalTraceRecorder(BaseTracer):
             extra += f" ERROR={s.error}" if s.error else ""
             lines.append(f"{'  ' * s.depth}{s.run_type:<5} {s.name}{extra}")
         return lines
+
+
+class OfflineLangSmithClient(Client):
+    """A ``langsmith.Client`` that records what it WOULD send to LangSmith and never opens a socket.
+
+    LangSmith's tracers call ``create_run`` / ``update_run`` on the client; this subclass keeps those
+    payloads in ``self.recorded`` (keyed by run id) instead of posting them. Use it with
+    ``langsmith.tracing_context(enabled=True, client=...)`` to inspect real LangSmith run trees, tags,
+    metadata and redaction offline. The API URL points at a closed local port as a second safety net.
+    """
+
+    def __init__(self, *, hide_inputs=None, hide_outputs=None) -> None:
+        super().__init__(
+            api_url="http://127.0.0.1:9", api_key="offline-no-network", auto_batch_tracing=False, hide_inputs=hide_inputs, hide_outputs=hide_outputs
+        )
+        self.recorded: dict[str, dict] = {}
+        self.order: list[str] = []
+
+    def create_run(self, name, inputs, run_type, *args, **kwargs):
+        rid = str(kwargs.get("id"))
+        self.order.append(rid)
+        extra = kwargs.get("extra") or {}
+        skip = ("ls_", "langgraph_", "checkpoint_", "__", "revision_id", "LANGSMITH_")
+        self.recorded[rid] = {
+            "name": name,
+            "run_type": run_type,
+            "inputs": self._hide_run_inputs(inputs),  # the same masking hook the real client applies
+            "parent": str(kwargs.get("parent_run_id")) if kwargs.get("parent_run_id") else None,
+            "tags": list(kwargs.get("tags") or []),
+            "metadata": {k: v for k, v in (extra.get("metadata") or {}).items() if not k.startswith(skip)},
+            "outputs": None,
+            "error": None,
+        }
+
+    def update_run(self, run_id, **kwargs):
+        r = self.recorded.get(str(run_id))
+        if r is not None:
+            r["outputs"] = self._hide_run_outputs(kwargs["outputs"]) if kwargs.get("outputs") else r["outputs"]
+            r["error"] = kwargs.get("error") or r["error"]
+
+    def tree(self) -> list[str]:
+        children: dict[str | None, list[str]] = {}
+        for rid in self.order:
+            children.setdefault(self.recorded[rid]["parent"], []).append(rid)
+        lines: list[str] = []
+
+        def walk(rid: str, d: int) -> None:
+            r = self.recorded[rid]
+            meta = f" metadata={r['metadata']}" if d == 0 and r["metadata"] else ""
+            tags = f" tags={r['tags']}" if d == 0 and r["tags"] else ""
+            lines.append(f"{'  ' * d}{r['run_type']:<6} {r['name']}{tags}{meta}{' ERROR' if r['error'] else ''}")
+            for c in children.get(rid, []):
+                walk(c, d + 1)
+
+        for root in children.get(None, []):
+            walk(root, 0)
+        return lines
+
+
+def deep_mask(pattern, replacement: str):
+    """Build a hide_inputs/hide_outputs function that masks ``pattern`` in every string, however nested."""
+
+    def walk(v):
+        if isinstance(v, str):
+            return pattern.sub(replacement, v)
+        if isinstance(v, dict):
+            return {k: walk(x) for k, x in v.items()}
+        if isinstance(v, list | tuple):
+            return type(v)(walk(x) for x in v)
+        if isinstance(v, BaseMessage):  # LangChain passes live message objects; copy, never mutate state
+            update = {"content": walk(v.content)}
+            if isinstance(v, AIMessage) and v.tool_calls:
+                update["tool_calls"] = [{**tc, "args": walk(tc["args"])} for tc in v.tool_calls]
+            return v.model_copy(update=update)
+        return v
+
+    return walk
