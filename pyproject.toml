@@ -26,7 +26,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "ruff==0.17.0"]
+dev = ["pytest==9.1.1", "pytest-asyncio==1.4.0", "ruff==0.17.0", "langgraph-cli[inmem]==0.4.33"]
 azure = ["azure-identity==1.26.0"]
 server = ["langgraph-cli[inmem]==0.4.33"]
 

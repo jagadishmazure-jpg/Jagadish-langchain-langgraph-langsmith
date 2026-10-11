@@ -1,0 +1,10 @@
+{
+  "$schema": "https://langgra.ph/schema.json",
+  "dependencies": ["."],
+  "graphs": {
+    "scheduling_assistant": "./src/lcstack/scenarios/s22_deploying.py:graph",
+    "support_desk": "./src/lcstack/capstone/server.py:graph"
+  },
+  "python_version": "3.13",
+  "env": ".env"
+}
