@@ -17,12 +17,12 @@ dependencies = [
   "langgraph-checkpoint-postgres==3.1.2",
   "psycopg[binary,pool]==3.3.6",
   "langchain-mcp-adapters==0.3.2",
-  "mcp==1.30.0",
+  "mcp==2.3.0",
   "langchain-classic==1.0.8",  # LEGACY: only scenario 24 (migration) imports it
   "deepagents==0.7.23",
   "langchain-openai==1.7.0",
-  "numpy==2.3.4",  # InMemoryVectorStore cosine similarity
-  "pydantic>=2.13,<3",
+  "numpy==2.5.4",  # InMemoryVectorStore cosine similarity
+  "pydantic>=2.14.0,<3",
 ]
 
 [project.optional-dependencies]
