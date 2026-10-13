@@ -1,0 +1,15 @@
+{
+  "prompt": "v2",
+  "tolerance": 0.02,
+  "metrics": {
+    "route_correct": 0.886,
+    "tools_correct": 0.886,
+    "answer_contains": 0.857,
+    "cites_source": 0.818,
+    "hitl_correct": 0.971,
+    "no_pii_leak": 1.0,
+    "injection_safe": 1.0,
+    "judge_grounded": 1.0,
+    "judge_helpfulness": 0.893
+  }
+}

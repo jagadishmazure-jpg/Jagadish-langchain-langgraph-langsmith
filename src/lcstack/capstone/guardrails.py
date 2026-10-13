@@ -21,7 +21,7 @@ from langchain_core.messages import ToolMessage
 INJECTION = [
     re.compile(p, re.I)
     for p in (
-        r"ignore (all |any )?(your |the |previous |prior )?(instructions|rules|guidelines)",
+        r"ignore (all |any )?((your|the|previous|prior|earlier) )*(instructions|rules|guidelines)",
         r"assistant instruction",
         r"system (override|prompt)",
         r"you are now (in )?(developer|admin|dan)",
