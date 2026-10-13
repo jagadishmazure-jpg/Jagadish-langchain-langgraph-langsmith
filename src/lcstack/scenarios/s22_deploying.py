@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 from pathlib import Path
 
 from langchain.agents import create_agent
@@ -67,7 +68,8 @@ def run() -> list[str]:
     dockerfile, _ = config_to_docker(cfg_path, config)
     lines = dockerfile.splitlines()
     out += ["", "Dockerfile generated (what `langgraph build` would build):"]
-    out += [f"  {line}" for line in lines if line.startswith(("FROM", "WORKDIR"))]
+    # WORKDIR is /deps/<checkout folder name>; normalised so the output does not depend on where the repo is cloned
+    out += [f"  {re.sub(r'^(WORKDIR /deps/).*', r'\1<repo>', line)}" for line in lines if line.startswith(("FROM", "WORKDIR"))]
     out.append(
         f"  {sum(1 for line in lines if line.startswith(('RUN', 'ADD', 'ENV')))} RUN/ADD/ENV instructions; graphs registered via LANGSERVE_GRAPHS"
     )

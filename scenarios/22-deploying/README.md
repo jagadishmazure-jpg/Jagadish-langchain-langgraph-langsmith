@@ -61,7 +61,7 @@ langgraph.json validated by langgraph-cli: python 3.13, 2 graphs
 
 Dockerfile generated (what `langgraph build` would build):
   FROM langchain/langgraph-api:3.13
-  WORKDIR /deps/langchain-langgraph-langsmith
+  WORKDIR /deps/<repo>
   9 RUN/ADD/ENV instructions; graphs registered via LANGSERVE_GRAPHS
 
 SDK surface used by the portal (checked against the installed langgraph-sdk):
