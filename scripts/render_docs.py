@@ -167,7 +167,7 @@ GENERATORS = {
     "eval-compare": lambda: "```text\n" + eval_block() + "\n```",
     "gate": lambda: "```text\n" + gate_block() + "\n```",
 }
-BLOCK = re.compile(r"(<!-- BEGIN (?P<name>[\w-]+) -->\n)(.*?)(\n<!-- END (?P=name) -->)", re.S)
+BLOCK = re.compile(r"(<!-- BEGIN (?P<name>[\w-]+) -->\n)(.*?)(<!-- END (?P=name) -->)", re.S)
 
 
 def fill_blocks(text: str, cache: dict) -> str:
@@ -175,7 +175,7 @@ def fill_blocks(text: str, cache: dict) -> str:
         name = mt.group("name")
         if name not in cache:
             cache[name] = GENERATORS[name]()
-        return mt.group(1) + cache[name] + mt.group(4)
+        return mt.group(1) + cache[name] + "\n" + mt.group(4)
 
     return BLOCK.sub(sub, text)
 

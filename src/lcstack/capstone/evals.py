@@ -68,7 +68,9 @@ async def run_case(
     t.reset()
     gr.EVENTS.clear()
     g = graph or build(get_prompt(prompt_version), guard=guard, checkpointer=InMemorySaver())
-    cfg = {"configurable": {"thread_id": f"eval-{uuid.uuid4()}"}, "metadata": {"prompt_version": get_prompt(prompt_version).version}}
+    # a fresh checkpointer per case, so a deterministic thread id is safe (and keeps traces reproducible)
+    tid = uuid.uuid5(NS, f"{customer_id}|{question}|{prompt_version}|{guard}") if graph is None else uuid.uuid4()
+    cfg = {"configurable": {"thread_id": f"eval-{tid}"}, "metadata": {"prompt_version": get_prompt(prompt_version).version}}
     ctx = t.Customer(customer_id)
     res = await g.ainvoke({"messages": [{"role": "user", "content": question}]}, cfg, context=ctx)
     interrupts, reviewed = 0, []
