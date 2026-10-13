@@ -44,7 +44,7 @@ packages = ["src/lcstack"]
 pythonpath = ["src", "."]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-filterwarnings = ["ignore::DeprecationWarning", "ignore::langsmith.utils.LangSmithBetaWarning"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::langsmith.utils.LangSmithWarning"]
 markers = ["postgres: needs DATABASE_URL pointing at a Postgres server (CI provides one)"]
 
 [tool.ruff]
