@@ -56,8 +56,8 @@ Ferrowind Insurance - FNOL bot migration parity
 
 old pattern                              new pattern
 initialize_agent, AgentExecutor          langchain.agents.create_agent
-langgraph.prebuilt.create_react_agent    create_agent with middleware
-LLMChain, RetrievalQA                    LCEL pipes, or an agent with a retriever tool
+langgraph.prebuilt.create_react_agent    langchain.agents.create_agent (hooks as middleware)
+LLMChain, RetrievalQA                    prompt | model | parser; for RAG a retriever exposed as a tool
 ConversationBufferMemory                 a checkpointer plus thread_id
 legacy chains and imports                the langchain-classic package
 

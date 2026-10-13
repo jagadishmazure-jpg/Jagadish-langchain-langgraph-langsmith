@@ -62,9 +62,9 @@ def chat_model(playbook: Playbook | None = None, *, name: str = "scripted", fail
         return scripted(playbook, name=name, fail_times=fail_times)
     if choice == "azure":
         return azure_chat_model()
-    from langchain.chat_models import init_chat_model
+    from langchain import chat_models
 
-    return init_chat_model(choice, temperature=0)
+    return chat_models.init_chat_model(choice, temperature=0)
 
 
 def embeddings() -> Embeddings:

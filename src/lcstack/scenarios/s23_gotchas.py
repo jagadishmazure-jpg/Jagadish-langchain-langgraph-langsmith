@@ -189,7 +189,7 @@ GOTCHAS = [
     ("Memory lost between turns", "new thread_id each call", lambda: g2_turns(False), lambda: g2_turns(True)),
     ("GraphRecursionError", "loop has no exit; recursion_limit put inside configurable", g3_broken, g3_fixed),
     ("List state keeps growing", "reducer appends on every run", lambda: g4_run(False), lambda: g4_run(True)),
-    ("Two branches ran", "static edge plus Command from one node", lambda: g5_run(True), lambda: g5_run(False)),
+    ("Two branches ran", "a node had both a Command goto and a fixed edge", lambda: g5_run(True), lambda: g5_run(False)),
     ("Duplicate side effects", "node re-ran from its first line after interrupt", lambda: g6_run(False), lambda: g6_run(True)),
     ("Checkpoint revives unknown class", "custom type not on the serializer allowlist", lambda: g7_run(False), lambda: g7_run(True)),
 ]

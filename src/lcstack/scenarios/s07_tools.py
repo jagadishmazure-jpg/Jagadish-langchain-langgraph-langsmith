@@ -36,11 +36,11 @@ MCP_SERVER = Path(__file__).with_name("s07_mcp_server.py")
 
 
 @tool
-def search_orders(email: str, limit: int = 5) -> list[dict]:
+def search_orders(customer_email: str, max_results: int = 5) -> list[dict]:
     """Find a customer's most recent orders by email address.
 
     Call this before any refund so you refund an order that belongs to the customer."""
-    return ORDERS.get(email.lower(), [])[:limit]
+    return ORDERS.get(customer_email.lower(), [])[:max_results]
 
 
 @tool
@@ -80,7 +80,7 @@ def _order(t: Turn) -> str:
 
 PLAYBOOK = Playbook(intents=[
     Intent("refund", r"refund", steps=[
-        lambda t: ("search_orders", {"email": _email(t), "limit": 5}),
+        lambda t: ("search_orders", {"customer_email": _email(t), "max_results": 5}),
         lambda t: ("refund_order", {"order_id": _order(t), "reason": "customer request"}),
     ], answer=lambda t: t.results.get("refund_order", "").replace("ERROR: ", "I could not do that: ")),
     Intent("stock", r"stock|points", steps=[

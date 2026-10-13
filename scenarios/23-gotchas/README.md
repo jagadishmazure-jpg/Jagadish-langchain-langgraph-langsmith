@@ -90,7 +90,7 @@ Halsey Vale Health - pharmacy refill gotchas, broken then fixed
 4. List state keeps growing (reducer appends on every run)
    broken: checks after 3 runs = 6
    fixed : checks after 3 runs = 2
-5. Two branches ran (static edge plus Command from one node)
+5. Two branches ran (a node had both a Command goto and a fixed edge)
    broken: ran: ['AUTO-FILLED', 'pharmacist review']
    fixed : ran: ['pharmacist review']
 6. Duplicate side effects (node re-ran from its first line after interrupt)

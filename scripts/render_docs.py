@@ -152,7 +152,18 @@ def gate_block() -> str:
     return "\n".join(run_quiet(lambda: run_gate()[0]))
 
 
+def test_count() -> str:
+    import subprocess
+
+    out = subprocess.run(
+        [sys.executable, "-m", "pytest", "--collect-only", "-q", "-p", "no:cacheprovider"], cwd=ROOT, capture_output=True, text=True
+    ).stdout
+    n = int(re.search(r"(\d+) tests? collected", out).group(1))
+    return f"**{n} tests** (`pytest --collect-only -q`), plus 3 `terraform test` runs."
+
+
 GENERATORS = {
+    "test-count": test_count,
     "scenario-table": readme_table,
     "capstone-demo": lambda: "```text\n" + capstone_block("demo") + "\n```",
     "capstone-trace": lambda: "```text\n" + capstone_block("trace") + "\n```",

@@ -171,11 +171,11 @@ def judge_model():
     choice = os.getenv("LCSTACK_JUDGE_MODEL")
     if not choice:
         return scripted(Playbook(extractors={"JudgeVerdict": _scripted_judge}), name="judge").with_structured_output(JudgeVerdict)
-    from langchain.chat_models import init_chat_model
+    from langchain import chat_models
 
     from lcstack.core.models import azure_chat_model
 
-    m = azure_chat_model() if choice == "azure" else init_chat_model(choice, temperature=0)
+    m = azure_chat_model() if choice == "azure" else chat_models.init_chat_model(choice, temperature=0)
     return m.with_structured_output(JudgeVerdict)
 
 
