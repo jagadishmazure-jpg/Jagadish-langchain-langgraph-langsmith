@@ -18,7 +18,7 @@ def ask(q, cid="C-100", **kw):
         ("What are the wire transfer cutoff times?", "knowledge_agent"),
         ("My card was stolen, freeze it", "cards_agent"),
         ("Should I buy bitcoin with my savings?", "out_of_scope"),
-    ],  # fmt: skip
+    ],
 )
 def test_routes(q, route):
     assert ask(q, reference={"reviewer": "approve"})["route"] == route
