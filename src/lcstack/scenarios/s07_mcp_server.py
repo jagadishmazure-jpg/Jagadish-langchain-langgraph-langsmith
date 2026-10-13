@@ -5,7 +5,7 @@ Run by scenario 07 and by the capstone through langchain-mcp-adapters. Data is f
 
 from mcp.server.fastmcp import FastMCP
 
-server = FastMCP("wrenfield-inventory")
+server = FastMCP("wrenfield-inventory", log_level="WARNING")
 STOCK = {("SKU-OATS-1KG", "Riverside"): 14, ("SKU-OATS-1KG", "Harbour"): 0}
 POINTS = {"C-118": 2310}
 

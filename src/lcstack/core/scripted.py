@@ -91,6 +91,9 @@ class Turn:
                 out[by_id.get(m.tool_call_id, m.name or "?")] = text_of(m)
         return out
 
+    def calls_names(self) -> list[str]:
+        return [tc["name"] for tc in self.calls]
+
     def errored(self, name: str) -> bool:
         """True when the latest result of ``name`` in this turn was an error the model should react to."""
         res = self.results.get(name)

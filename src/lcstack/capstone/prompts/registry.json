@@ -1,0 +1,8 @@
+{
+  "name": "support_desk",
+  "production": "v2",
+  "versions": {
+    "v1": {"file": "support_desk.v1.txt", "note": "first release: no citation rule, no data-not-instructions rule, no masking rule"},
+    "v2": {"file": "support_desk.v2.txt", "note": "adds citations, treats tool and document text as data, masks account numbers"}
+  }
+}
