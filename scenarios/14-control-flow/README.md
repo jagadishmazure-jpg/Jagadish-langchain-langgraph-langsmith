@@ -93,7 +93,3 @@ Send map-reduce over 5 accounts (one summarise task each, same super-step):
 
 - Use one routing mechanism per node.
 - Send is LangGraph's map-reduce: the fan-out width is decided at runtime.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

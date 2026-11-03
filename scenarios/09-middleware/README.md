@@ -90,7 +90,3 @@ cap_turns (before_model, jump_to end) on a 61-message thread: 'This conversation
 
 - Middleware keeps cross-cutting controls out of business tools.
 - Built-in middleware covers most compliance asks; custom hooks cover the rest.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

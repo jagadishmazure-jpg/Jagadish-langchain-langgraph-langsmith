@@ -98,7 +98,3 @@ JSON round trip for the audit store: 1615 bytes, equal after reload: True
 
 - Messages are the common currency between models, tools and graphs.
 - Store transcripts in the serialised message format so they can be replayed.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

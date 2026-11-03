@@ -85,7 +85,3 @@ checkpointer = this conversation's short-term state; store = facts shared across
 
 - Short-term memory is state; long-term memory is a store.
 - Production stores are Postgres-backed with the same interface.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

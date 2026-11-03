@@ -65,7 +65,3 @@ values: 4 full-state snapshots; message count grows [1, 2, 3, 4]
 
 - Streaming is about perceived latency and transparency.
 - Use `updates` for logs, `messages` for chat UIs, `custom` for progress.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

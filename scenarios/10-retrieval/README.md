@@ -112,7 +112,3 @@ agentic retrieval (retriever wrapped in @tool) - Can a gift cover the down payme
 
 - Agentic RAG lets the agent skip retrieval when it is not needed and search again when it is.
 - Keep metadata (source, section) on chunks so answers can cite.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

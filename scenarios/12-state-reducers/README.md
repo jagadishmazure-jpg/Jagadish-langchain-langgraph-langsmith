@@ -86,7 +86,3 @@ custom union reducer merged two parallel pickers without duplicates: ['free-rang
 
 - Reducers are the concurrency model of LangGraph state.
 - Choose the reducer per key, based on how concurrent and repeated writes should combine.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

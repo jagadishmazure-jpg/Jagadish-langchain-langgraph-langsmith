@@ -102,7 +102,3 @@ PostgresSaver (production):
 
 - Durable execution is a checkpointer plus a thread id.
 - Time travel is reading history and resuming from an older checkpoint.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

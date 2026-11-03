@@ -88,7 +88,3 @@ model calls: 6
 
 - create_agent is a small, production-ready loop; extend it with middleware before writing a graph.
 - Context is per-run and trusted; state is per-thread and model-visible.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

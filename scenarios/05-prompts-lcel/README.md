@@ -76,7 +76,3 @@ bind_tools -> the model asks for a tool: [('get_policy', {'claim_id': 'FW-20931'
 
 - LCEL is still the right tool for fixed pipelines with no agent loop.
 - Every runnable gets invoke, stream, batch and async for free.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

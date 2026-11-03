@@ -1,7 +1,7 @@
 [project]
 name = "lcstack"
 version = "0.1.0"
-description = "LangChain, LangGraph and LangSmith end to end: 25 runnable client scenarios (one per section of a LangChain 1.x cheat sheet) and a multi-agent support capstone with RAG, MCP, HITL, persistence, streaming, tracing and evaluation. Offline and deterministic by default."
+description = "LangChain, LangGraph and LangSmith end to end: 25 runnable client scenarios (one per LangChain 1.x topic) and a multi-agent support capstone with RAG, MCP, HITL, persistence, streaming, tracing and evaluation. Offline and deterministic by default."
 readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Jagadish Meduri" }]

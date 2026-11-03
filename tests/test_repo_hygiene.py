@@ -17,11 +17,6 @@ def test_reference_pdf_is_never_committed():
     assert not [f for f in FILES if f.lower().endswith(".pdf")]
 
 
-def test_cheat_sheet_credited_by_name():
-    text = Path("README.md").read_text()
-    assert "LangChain & LangGraph Cheat Sheet" in text and "AI Engineering Insider" in text
-
-
 @pytest.mark.parametrize("path", MD, ids=str)
 def test_doc_links_resolve(path):
     for target in re.findall(r"\]\(([^)#\s]+)(?:#[^)]*)?\)", path.read_text()):

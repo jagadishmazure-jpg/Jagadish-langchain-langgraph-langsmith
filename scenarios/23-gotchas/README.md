@@ -114,7 +114,3 @@ Halsey Vale Health - pharmacy refill gotchas, broken then fixed
 
 - Writing the failing case first proves you understand the cause.
 - Most LangGraph bugs come from state merging and resume semantics.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

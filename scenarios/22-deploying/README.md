@@ -88,7 +88,3 @@ managed (LangSmith Deployment): push the repo, LangSmith builds the same image a
 
 - The Agent Server adds threads, runs, background jobs, crons and streaming over HTTP.
 - Managed versus self-host is a data-residency and operations trade-off.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

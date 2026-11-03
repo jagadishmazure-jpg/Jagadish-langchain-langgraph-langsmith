@@ -100,7 +100,3 @@ agent answer: SKU-OATS-1KG at Riverside: 14 units on the shelf. Customer C-118 h
 
 - Business rules belong in tools, where they are testable, not in the prompt.
 - MCP lets another team own a tool server without sharing code.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

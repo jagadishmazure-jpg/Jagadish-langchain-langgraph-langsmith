@@ -1,6 +1,6 @@
 # LangChain, LangGraph and LangSmith, end to end
 
-25 runnable client scenarios, one per section of a LangChain/LangGraph cheat sheet, and a capstone
+25 runnable client scenarios, one per topic across the LangChain/LangGraph stack, and a capstone
 multi-agent support desk with RAG, tools, MCP, guardrails, human approval, persistence, streaming,
 LangSmith tracing, datasets, evaluations, prompt versions, feedback and monitoring.
 
@@ -114,7 +114,7 @@ pipeline and guardrails with a scripted model and a scripted judge, not model qu
 | Terraform (`terraform test`, tflint, checkov) and Bicep build | applying the templates (deploy workflow gated off) |
 
 <!-- BEGIN test-count -->
-**175 tests** (`pytest --collect-only -q`), plus 3 `terraform test` runs.
+**174 tests** (`pytest --collect-only -q`), plus 3 `terraform test` runs.
 <!-- END test-count -->
 
 ## Related repositories
@@ -124,9 +124,7 @@ pipeline and guardrails with a scripted model and a scripted judge, not model qu
 [Jagadish-azure-ai-soc](https://github.com/jagadishmazure-jpg/Jagadish-azure-ai-soc),
 [Jagadish-agent-auth-security](https://github.com/jagadishmazure-jpg/Jagadish-agent-auth-security).
 
-## Credits and licence
+## Licence
 
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider. The cheat sheet
-is not included and its text is not reproduced; all code and prose here are original
-(`scripts/overlap_check.py` reports 0 overlapping 8-word runs against it). MIT licence, see [LICENSE](LICENSE).
+MIT licence, see [LICENSE](LICENSE).
 Security reports: [SECURITY.md](SECURITY.md).

@@ -87,7 +87,3 @@ create_agent nodes: ['model', 'tools']
 
 - create_agent is this loop plus middleware hooks.
 - Build by hand when you need extra nodes in the loop.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

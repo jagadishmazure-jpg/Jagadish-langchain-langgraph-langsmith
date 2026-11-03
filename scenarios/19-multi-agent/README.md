@@ -108,7 +108,3 @@ fraud subgraph as a node: parent state keys after the run = ['messages'] (privat
 
 - Use multi-agent when specialists need different tools or prompts; otherwise one agent is simpler.
 - Subgraphs give encapsulation, like functions.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

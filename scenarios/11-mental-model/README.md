@@ -111,7 +111,3 @@ final state: acuity='resuscitation bay (financial counselling referral)', news_s
 
 - Think in super-steps: everything scheduled together runs together, then state is merged and saved.
 - Checkpoints per step are what make HITL and time travel possible.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

@@ -97,7 +97,3 @@ dataset example built from the trace: inputs=['alert_text'] outputs=['explanatio
 
 - Turn tracing on before debugging, not after.
 - Traces become datasets: interesting runs are added as eval examples.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

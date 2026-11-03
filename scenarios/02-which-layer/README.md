@@ -107,7 +107,3 @@ layer chooser:
 
 - Pick the highest layer that fits and drop down only for a concrete need.
 - All five share the same model, message and tool abstractions, so moving between layers is cheap.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

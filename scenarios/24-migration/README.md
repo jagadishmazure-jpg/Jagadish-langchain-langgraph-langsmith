@@ -81,7 +81,3 @@ summary   SAME: Hail damage to roof and car; policy in force; claim opened.
 
 - Migrate behind a parity test, not by rewriting and hoping.
 - Keep the legacy code until the parity test has run in production traffic.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

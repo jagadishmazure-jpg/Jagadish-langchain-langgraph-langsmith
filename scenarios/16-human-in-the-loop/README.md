@@ -91,7 +91,3 @@ no checkpointer: the pause happens (True) but resuming fails: Cannot use Command
 
 - Put side effects after the interrupt, or make them idempotent.
 - HITL is a checkpoint plus a resume value, so the human can answer hours later.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

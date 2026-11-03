@@ -22,8 +22,6 @@ from scenario_notes import N  # noqa: E402
 
 from lcstack.scenarios import MODULES, load  # noqa: E402
 
-CREDIT = "Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original."
-
 
 def run_quiet(fn):
     return fn()
@@ -114,10 +112,6 @@ def scenario_readme(n: int) -> str:
         "## Interview points",
         "",
         *[f"- {i}" for i in notes["interview"]],
-        "",
-        "---",
-        "",
-        CREDIT,
         "",
     ]
     return "\n".join(parts)

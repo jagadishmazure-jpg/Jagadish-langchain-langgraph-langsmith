@@ -93,7 +93,3 @@ create_agent(response_format=ToolStrategy(ClaimTriage, handle_errors=True)):
 
 - Typed outputs are what let an LLM step feed a system of record.
 - Prefer provider-native structured output when available; ToolStrategy works everywhere.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

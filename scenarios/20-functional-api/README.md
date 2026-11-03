@@ -76,7 +76,3 @@ next night, same thread: the workflow receives previous=2 (the save= value, not 
 
 - The Functional API gives durable execution without a graph.
 - Tasks are the unit of checkpointing.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

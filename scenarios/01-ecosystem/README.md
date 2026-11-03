@@ -103,7 +103,3 @@ Legacy chains and AgentExecutor import only from langchain_classic; new code use
 
 - langchain-core is the contract layer; langgraph is the runtime; langchain 1.x is the opinionated agent layer on top.
 - LangSmith is framework-agnostic: `@traceable` works on plain Python.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

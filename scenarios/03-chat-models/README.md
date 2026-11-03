@@ -89,7 +89,3 @@ total model calls: 11
 
 - Provider-agnostic code means swapping Azure OpenAI for another provider is a config change (`LCSTACK_MODEL`).
 - Async matters when one process serves many conversations.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.

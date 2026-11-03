@@ -1,4 +1,4 @@
-"""The 25 scenarios, one per section of the cheat sheet. Each module exposes ``META`` and ``run() -> list[str]``."""
+"""The 25 scenarios, one per topic. Each module exposes ``META`` and ``run() -> list[str]``."""
 
 from __future__ import annotations
 

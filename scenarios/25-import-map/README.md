@@ -117,7 +117,3 @@ this repo: 0 pre-1.0 imports in scenarios/capstone/core; 3 in the labelled legac
 
 - Verify the map against installed versions, not memory.
 - An import linter is a cheap guard during migrations.
-
----
-
-Section titles follow the *LangChain & LangGraph Cheat Sheet* by AI Engineering Insider; all text and code here are original.
