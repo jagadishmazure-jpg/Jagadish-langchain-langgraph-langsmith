@@ -82,8 +82,8 @@ deepagents                     0.7.23     agents        deepagents:create_deep_a
 langchain-openai               1.7.0      integration   langchain_openai:AzureChatOpenAI OK
 langchain-mcp-adapters         0.3.2      integration   langchain_mcp_adapters.client:MultiServerMCPClient OK
 langchain-text-splitters       1.1.3      retrieval     langchain_text_splitters:RecursiveCharacterTextSplitter OK
-langgraph-checkpoint-sqlite    3.1.1      persistence   langgraph.checkpoint.sqlite:SqliteSaver OK
-langgraph-checkpoint-postgres  3.1.2      persistence   langgraph.checkpoint.postgres:PostgresSaver OK
+langgraph-checkpoint-sqlite    3.1.2      persistence   langgraph.checkpoint.sqlite:SqliteSaver OK
+langgraph-checkpoint-postgres  3.1.3      persistence   langgraph.checkpoint.postgres:PostgresSaver OK
 langchain-classic              1.0.8      legacy        langchain_classic.agents:AgentExecutor OK
 
 create_agent(...) returns: langgraph.graph.state.CompiledStateGraph

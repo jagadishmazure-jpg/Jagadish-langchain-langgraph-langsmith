@@ -178,7 +178,7 @@ langgraph==1.2.14
     #   langgraph-runtime-inmem
 langgraph-api==0.16.0
     # via langgraph-cli
-langgraph-checkpoint==4.2.0
+langgraph-checkpoint==4.3.1
     # via
     #   langgraph
     #   langgraph-api
@@ -186,9 +186,9 @@ langgraph-checkpoint==4.2.0
     #   langgraph-checkpoint-sqlite
     #   langgraph-prebuilt
     #   langgraph-runtime-inmem
-langgraph-checkpoint-postgres==3.1.2
+langgraph-checkpoint-postgres==3.1.3
     # via lcstack (pyproject.toml)
-langgraph-checkpoint-sqlite==3.1.1
+langgraph-checkpoint-sqlite==3.1.2
     # via lcstack (pyproject.toml)
 langgraph-cli==0.4.33
     # via lcstack (pyproject.toml)
