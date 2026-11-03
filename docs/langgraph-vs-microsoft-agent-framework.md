@@ -21,8 +21,8 @@ This page is how I choose for a client. It compares concepts, not benchmarks; no
 | Multi-agent patterns | supervisor, handoff with `Command.PARENT`, subgraphs (scenario 19) | sequential, concurrent, handoff, group chat, Magentic orchestrations |
 | Tools from other teams | MCP via `langchain-mcp-adapters` (scenario 7) | MCP and A2A built in |
 | Languages | Python, JavaScript/TypeScript | Python and .NET |
-| Observability | LangSmith (native), OpenTelemetry export | OpenTelemetry; Azure AI Foundry / Application Insights |
-| Evaluation | LangSmith datasets, `evaluate`, online evaluators | Azure AI Foundry evaluations and the Azure AI evaluation SDK |
+| Observability | LangSmith (native), OpenTelemetry export | OpenTelemetry; Microsoft Foundry / Application Insights |
+| Evaluation | LangSmith datasets, `evaluate`, online evaluators | Microsoft Foundry evaluations and the Azure AI evaluation SDK |
 | Serving | Agent Server (`langgraph.json`), managed or self-hosted | your own host (Container Apps, Functions, App Service) or Foundry Agent Service |
 
 ## How I choose
