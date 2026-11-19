@@ -92,3 +92,11 @@ Known gaps are in [limitations.md](limitations.md#infrastructure).
    with required reviewers on `prod`.
 3. Run provision once, then write the LangSmith key: `az keyvault secret set --vault-name <vault> -n langsmith-api-key --value <key>`.
 4. Set `DEPLOY_ENABLED=true`. The deploy job builds the image with `langgraph build`, pushes it and rolls the app.
+
+## Foundry hosted agents
+
+A second way to serve the support-desk graph is a Microsoft Foundry hosted agent. The Agent Server
+injects the checkpointer. A Foundry Responses host does not, so the Foundry copy compiles the same
+builder with one. The in-process adapter, the example manifest, and the comparison with Agent
+Framework on Foundry are in [foundry-hosted-langgraph.md](foundry-hosted-langgraph.md). The example
+is not applied.

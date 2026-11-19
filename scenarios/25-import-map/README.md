@@ -100,7 +100,7 @@ lint of a pre-1.0 Quillmere service (rate_lock_bot.py):
   rate_lock_bot.py:3: langchain.memory -> use a checkpointer plus thread_id
   rate_lock_bot.py:4: langchain.chat_models -> import the class from its provider package
   rate_lock_bot.py:5: langgraph.prebuilt -> use langchain.agents.create_agent (with middleware)
-this repo: 0 pre-1.0 imports in scenarios/capstone/core; 3 in the labelled legacy folder (expected)
+this repo: 0 pre-1.0 imports in scenarios/capstone/core/foundry; 3 in the labelled legacy folder (expected)
 ```
 
 ## Tests

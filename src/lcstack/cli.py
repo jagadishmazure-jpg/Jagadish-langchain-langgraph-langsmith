@@ -26,6 +26,8 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--prompt", default=None, help="prompt version to evaluate (default: the production one)")
     e.add_argument("--compare", action="store_true", help="compare every prompt version")
     sub.add_parser("gate", help="regression gate: evaluation thresholds, guardrails, scenarios")
+    fnd = sub.add_parser("foundry", help="offline Foundry hosted-agent demo for the support-desk graph")
+    fnd.add_argument("action", nargs="?", default="demo", choices=["demo", "manifest"])
     li = sub.add_parser("lint-imports", help="flag pre-1.0 LangChain imports in Python files")
     li.add_argument("paths", nargs="+")
     a = ap.parse_args(argv)
@@ -63,6 +65,17 @@ def main(argv: list[str] | None = None) -> int:
         lines, ok = gate.run_gate()
         _print(lines)
         return 0 if ok else 1
+    if a.cmd == "foundry":
+        if a.action == "manifest":
+            from lcstack.foundry.manifest import report
+
+            lines = report()
+            _print(lines)
+            return 1 if any(line.strip().startswith("problem:") for line in lines) else 0
+        from lcstack.foundry.desk import demo
+
+        _print(demo())
+        return 0
     return 2
 
 
