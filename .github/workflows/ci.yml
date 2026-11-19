@@ -25,7 +25,7 @@ jobs:
       - name: Lint
         run: ruff check . && ruff format --check .
       - name: Pre-1.0 import lint (everything except the labelled legacy module)
-        run: lcstack lint-imports src/lcstack/core src/lcstack/capstone src/lcstack/scenarios src/lcstack/cli.py scripts tests
+        run: lcstack lint-imports src/lcstack/core src/lcstack/capstone src/lcstack/scenarios src/lcstack/foundry src/lcstack/cli.py scripts tests
       - name: Tests (offline, scripted model, network blocked)
         run: pytest -q
       - name: Regression gate (evaluation thresholds, guardrail invariants, all 25 scenarios)

@@ -10,12 +10,16 @@
 | Dataset / Example | Labelled inputs and reference outputs used by `langsmith.evaluate` |
 | Evaluator | A function scoring a run against its reference (heuristic or LLM-as-judge) |
 | HITL | Human in the loop: `interrupt()` pauses, a person decides, the run resumes |
+| Hosted agent | Your agent code running in Foundry Agent Service. The adapter in this repo is an in-process stand-in |
+| Invocations protocol | Custom JSON on `/invocations`. The application stores conversation state |
+| Responses protocol | OpenAI-compatible `/responses`. Foundry stores the conversation transcript |
 | LCEL | LangChain Expression Language: composing runnables with `|` |
 | MCP | Model Context Protocol: tools served by a separate process, loaded with `langchain-mcp-adapters` |
 | Middleware | Hooks around the agent loop (`before_model`, `wrap_tool_call`, ...) for cross-cutting controls |
 | Reducer | How a state key merges concurrent or repeated updates (`add_messages`, `operator.add`, custom) |
 | Run tree | The nested spans of one invocation as stored by LangSmith |
 | Scripted model | This repo's deterministic chat model, used so everything runs without keys |
+| Session | The hosted sandbox and its filesystem. A session id does not restore the chat transcript |
 | Send | Fan-out of one node per item at runtime (map-reduce) |
 | Store | Long-term memory across threads, organised by namespace |
 | Super-step | One round in which all scheduled nodes run, then state merges and a checkpoint is written |
