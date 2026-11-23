@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Offline Foundry hosted-agent adapter for the support-desk graph: Responses host stand-in, trace hook, example manifest, comparison with Agent Framework on Foundry.
 - 25 offline scenarios, one per cheat-sheet section, across retail, banking, healthcare, insurance and mortgage.
 - Capstone support desk: supervisor, three specialists, RAG, MCP, guardrails, HITL, streaming, offline LangSmith tracing.
 - Dataset of 35 cases, heuristic and LLM-as-judge evaluators, prompt versions v1/v2, regression gate.

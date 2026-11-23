@@ -1,0 +1,22 @@
+# Example only. Not applied. No subscription, no credentials, no live endpoint.
+# The platform injects FOUNDRY_PROJECT_ENDPOINT. Do not set it here.
+# Preview items are listed with [verify] in docs/foundry-hosted-langgraph.md.
+#
+# langgraph.json registers support_desk without a checkpointer because the Agent Server injects one.
+# A Foundry Responses host does not. This entry point is lcstack.foundry.serve, which compiles the
+# same builder with a checkpointer and, in this repository, runs the offline stand-in.
+# A process that was actually deploying would construct
+# langchain_azure_ai.agents.hosting.ResponsesHostServer around that compiled graph.
+# A messages-only graph with no interrupts can instead use:
+#   -m langchain_azure_ai.agents.hosting.run support_desk --protocol responses
+services:
+  support-desk:
+    host: azure.ai.agent
+    kind: hosted
+    env:
+      PYTHONNOUSERSITE: "1"
+      LCSTACK_MODEL: scripted
+      AZURE_AI_MODEL_DEPLOYMENT_NAME: gpt-4.1
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: "-m lcstack.foundry.serve --protocol responses"

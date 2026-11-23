@@ -146,6 +146,18 @@ def gate_block() -> str:
     return "\n".join(run_quiet(lambda: run_gate()[0]))
 
 
+def foundry_mermaid() -> str:
+    from lcstack.foundry.diagram import MERMAID
+
+    return "```mermaid\n" + MERMAID.strip() + "\n```"
+
+
+def foundry_demo() -> str:
+    from lcstack.foundry.desk import demo
+
+    return "```text\n" + "\n".join(demo()) + "\n```"
+
+
 def test_count() -> str:
     import subprocess
 
@@ -171,6 +183,8 @@ GENERATORS = {
     ),
     "eval-compare": lambda: "```text\n" + eval_block() + "\n```",
     "gate": lambda: "```text\n" + gate_block() + "\n```",
+    "foundry-mermaid": foundry_mermaid,
+    "foundry-demo": foundry_demo,
 }
 BLOCK = re.compile(r"(<!-- BEGIN (?P<name>[\w-]+) -->\n)(.*?)(<!-- END (?P=name) -->)", re.S)
 

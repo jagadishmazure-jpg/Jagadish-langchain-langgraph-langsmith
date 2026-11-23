@@ -113,7 +113,7 @@ def run() -> list[str]:
     out += ["", "lint of a pre-1.0 Quillmere service (rate_lock_bot.py):"]
     out += [f"  {x}" for x in lint_source(OLD_SERVICE, "rate_lock_bot.py")]
     here = Path(__file__).resolve().parents[1]
-    _, n_new = lint_paths([str(here / "scenarios"), str(here / "capstone"), str(here / "core")])
+    _, n_new = lint_paths([str(here / "scenarios"), str(here / "capstone"), str(here / "core"), str(here / "foundry")])
     _, n_legacy = lint_paths([str(here / "legacy")])
-    out.append(f"this repo: {n_new} pre-1.0 imports in scenarios/capstone/core; {n_legacy} in the labelled legacy folder (expected)")
+    out.append(f"this repo: {n_new} pre-1.0 imports in scenarios/capstone/core/foundry; {n_legacy} in the labelled legacy folder (expected)")
     return out

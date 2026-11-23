@@ -11,7 +11,8 @@ A short path from this repository to a client's first production agent.
 5. **Gate releases** with `lcstack gate`-style thresholds; give safety metrics a hard floor of 1.0.
 6. **Turn on LangSmith** in staging with masking on the client; promote failing traces into the dataset.
 7. **Serve** with `langgraph.json` and the Agent Server; choose managed or self-hosted with the table in
-   [deployment.md](deployment.md).
+   [deployment.md](deployment.md). A client already using Microsoft Foundry can host the same graph
+   there: [foundry-hosted-langgraph.md](foundry-hosted-langgraph.md).
 8. **Infrastructure**: start from `infra/terraform` with `private_networking = true` for regulated clients.
 
 Questions to ask the client in week one: which actions move money or change records (those get HITL),

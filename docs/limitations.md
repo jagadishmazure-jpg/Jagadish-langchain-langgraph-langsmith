@@ -10,6 +10,7 @@ Honest list of what this repository is and is not.
 | Capstone graph, guardrails, HITL, MCP, streaming, tracing (offline), evals, gate, feedback, monitoring | built |
 | PostgresSaver | built, tested in CI against a `postgres:17` service container (not on the dev box, which has no Docker) |
 | Agent Server | built and started locally in CI with `langgraph dev`; never deployed |
+| Foundry hosted-agent adapter (`lcstack foundry`) | built, in-process stand-in for the Responses host; the live package is not installed and nothing is deployed |
 | Terraform and Bicep for Azure | built and statically tested; never applied |
 | Deploy and teardown workflows | built, gated off (`DEPLOY_ENABLED` not set) |
 | Real model runs (Azure OpenAI via Entra ID) | wired (`LCSTACK_MODEL=azure`), not run in CI; no results are claimed |

@@ -90,6 +90,12 @@ The full comparison (v1 versus v2, guards on and off), the honest reading of the
 feedback are in [docs/capstone-architecture.md](docs/capstone-architecture.md). Offline numbers measure the
 pipeline and guardrails with a scripted model and a scripted judge, not model quality.
 
+## Foundry hosted agent
+
+`lcstack foundry` runs the support-desk graph behind an in-process Responses host, the shape described
+for a Microsoft Foundry hosted agent. The manifest under `foundry/` is an example and is not applied.
+See [docs/foundry-hosted-langgraph.md](docs/foundry-hosted-langgraph.md).
+
 ## Documentation
 
 | Doc | What it is |
@@ -97,6 +103,7 @@ pipeline and guardrails with a scripted model and a scripted judge, not model qu
 | [docs/capstone-architecture.md](docs/capstone-architecture.md) | capstone design and generated outputs |
 | [docs/langsmith-guide.md](docs/langsmith-guide.md) | tracing, datasets, evaluators, gate; offline versus account |
 | [docs/deployment.md](docs/deployment.md) | langgraph.json, Agent Server, managed versus self-hosted, Azure templates |
+| [docs/foundry-hosted-langgraph.md](docs/foundry-hosted-langgraph.md) | support desk as a Foundry hosted agent, versus Agent Framework on Foundry |
 | [docs/security.md](docs/security.md) | STRIDE, OWASP LLM Top 10 (2025), MITRE ATLAS, controls with tests |
 | [docs/langgraph-vs-microsoft-agent-framework.md](docs/langgraph-vs-microsoft-agent-framework.md) | how I choose |
 | [docs/adopt-this.md](docs/adopt-this.md) | path to a client's first production agent |
@@ -111,10 +118,11 @@ pipeline and guardrails with a scripted model and a scripted judge, not model qu
 | 25 scenarios, capstone, offline evals and gate | LangSmith UI, hub, uploaded experiments, online evaluators |
 | PostgresSaver against a CI service container | real-model evaluation runs |
 | Local Agent Server driven by the SDK in CI | managed or self-hosted deployment |
+| Foundry hosted-agent adapter, in-process, on the scripted model | a Foundry project and `langchain-azure-ai[hosting]` |
 | Terraform (`terraform test`, tflint, checkov) and Bicep build | applying the templates (deploy workflow gated off) |
 
 <!-- BEGIN test-count -->
-**174 tests** (`pytest --collect-only -q`), plus 3 `terraform test` runs.
+**190 tests** (`pytest --collect-only -q`), plus 3 `terraform test` runs.
 <!-- END test-count -->
 
 ## Related repositories

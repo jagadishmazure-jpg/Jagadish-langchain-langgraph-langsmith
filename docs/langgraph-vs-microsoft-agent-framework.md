@@ -6,6 +6,7 @@ Framework (MAF) in [Jagadish-azure-agent-platform](https://github.com/jagadishma
 [Jagadish-azure-agent-labs](https://github.com/jagadishmazure-jpg/Jagadish-azure-agent-labs) and
 [Jagadish-azure-ai-integration-platform](https://github.com/jagadishmazure-jpg/Jagadish-azure-ai-integration-platform).
 This page is how I choose for a client. It compares concepts, not benchmarks; no performance numbers are claimed.
+Hosting on Foundry is a separate choice: [Foundry hosted LangGraph versus Agent Framework](foundry-hosted-langgraph.md).
 
 ## Concept map
 
